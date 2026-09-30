@@ -28,6 +28,36 @@ differences from the Spring deck; its
 optional practices P01–P04 offline with the standard library. Media provenance is in
 [lecture-02/assets/README.md](lecture-02/assets/README.md).
 
+[Lecture 03](lecture-03/index.html) follows token IDs through embedding lookup,
+next-token loss, autograd, and a training step in 60 slides. A ten-slide
+classical bridge connects counts, PPMI, SVD/GloVe, word2vec, and fastText to
+current representations. The main path includes held-out coverage probes,
+weight tying, contextual states, and measured and estimated training costs,
+using pinned Qwen configurations. Its
+[teaching plan](lecture-03/teaching-plan.md) includes the three-period timing and
+the revision map from the Spring port. The
+[notebook](lecture-03/lecture-03-exercise.ipynb) runs exercises E01–E06 and
+optional practices P01–P03 offline on CPU. Longer classification and
+static-embedding material is in [optional reading](lecture-03/classical-reading.md).
+An opening visual review reuses Lecture 02’s toy corpus: trace bigram counts,
+normalize, and sample a next token before the neural computation.
+Seven editable diagrams and a PPMI heatmap accompany the explanations; browser
+controls demonstrate row lookup and the memory cost of changing table dimensions.
+See [asset provenance](lecture-03/assets/README.md) for the teaching figure,
+model metadata, and retained Spring images.
+
+[Lecture 04](lecture-04/index.html) extends the bigram model into a fixed-window
+neural LM, then develops and verifies one causal attention head in 56 slides.
+Its [teaching plan](lecture-04/teaching-plan.md) maps three 45-minute periods
+and the changes from the Spring neural-network and sequence-learning lecture.
+The [notebook](lecture-04/lecture-04-exercise.ipynb) runs E01–E05 and optional
+P01–P02 offline on CPU. Six editable diagrams, a computed training curve, and
+an interactive attention matrix accompany the numerical examples. The controls
+select a query, toggle its causal mask, and change a future value, with a reset
+to the printable initial example. Longer micrograd and LSTM work remains in
+[optional reading](lecture-04/optional-reading.md). See
+[asset provenance](lecture-04/assets/README.md).
+
 ## Teaching from a classroom browser
 
 Once the slide files reach the branch published by GitHub Pages, open the deck
@@ -133,6 +163,8 @@ slides/
   example/                Checked sample with a browser demonstration
   lecture-01/             Lecture 01 deck and lecture-01-exercise.ipynb
   lecture-02/             Lecture 02 deck and lecture-02-exercise.ipynb
+  lecture-03/             Lecture 03 deck and lecture-03-exercise.ipynb
+  lecture-04/             Lecture 04 deck and lecture-04-exercise.ipynb
   01-tokenization/        A lecture created when its content is ready
     index.html            Shared viewer shell
     lecture.json          Title, language, and optional demo module
@@ -302,6 +334,10 @@ The checker tests every slide at 1440×900, 1280×720, and 1024×768. It rejects
 overflowing content, small text, missing local assets, unmatched exercise IDs,
 unfinished placeholders, and slide-specific style overrides. It also checks
 sample interactions and runs with external runtime requests blocked.
+
+Lecture-related PRs run these checks automatically and save downloadable
+screenshots and PDFs. See [lecture checks and review previews](../docs/lecture-quality.md)
+for the workflow, artifacts, and pre-class rehearsal.
 
 Review the images and PDF in `slides/.checks/example/`. Long text should become
 another slide. A successful check does not establish that the teaching content
